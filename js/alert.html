@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function ShowWindow (text){
+				alert(text);
+			}
+			function ShowWindow_2 (){
+				let text = document.getElementById('my_field').value;
+				alert(text);
+			}
+			function RenderChecksBox (num){
+				//alert(num);
+				let ul = "<ul>";
+				for (let i = 1; i <= num; i++){
+					ul+= "<li><input type='checkbox' checked/> Чекбокс номер "+i+"</li>";
+				}
+				ul += "</ul>";
+				document.getElementById('checkBoxContainer').innerHTML=ul;
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" value="Hello World" id="my_field" />
+		<button onclick="ShowWindow(document.getElementById('my_field').value)">Спасибо!</button>
+		<button onclick="ShowWindow_2()">Пожалуйста!</button>
+
+		<input type="text" value="5" id="checks_num" />
+		<button onclick="RenderChecksBox(document.getElementById('checks_num').value)">Нарисовать чекбоксы</button>
+		<div id="checkBoxContainer">
+		</div>
+	</body>
+</html>
